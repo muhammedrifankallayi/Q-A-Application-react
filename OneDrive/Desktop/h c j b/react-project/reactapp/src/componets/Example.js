@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-
+import axios from "axios"
 import "../styles/Example.css"
-export default function Example() {
+import { Link ,useNavigate } from "react-router-dom";
 
+export default function Example() {
+  const navigate = useNavigate()
     const initialstage = { username: '', email: '', password: '', confirm_password: '' }
 
     const [formvalues, setFormvalues] = useState(initialstage)
@@ -16,9 +18,14 @@ export default function Example() {
     }
 
 
-    const HandleSubmit = (e) => {
+    const HandleSubmit = async(e) => {
         e.preventDefault();
         setErrorvalues(validate(formvalues))
+  console.log("haiai");
+      await  axios.post("http://localhost:4500/api/user/register",formvalues).then(()=>{
+        navigate("/login")
+      })
+      
 
     }
 
@@ -117,9 +124,9 @@ export default function Example() {
 
                         <p  class="text-red-400" > {Errorvalues?.confirm_password} </p>
 
-
+  
                         <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2" onClick={HandleSubmit} >Signup</button>
-                        <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">Already have account?</span>
+              <Link to={"/login"} >  <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer">Already have account?</span></Link> 
                     </form>
                 </div>
             </div>
