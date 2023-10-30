@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import 'react-phone-input-2/lib/style.css';
 
 import { Toaster , toast } from 'react-hot-toast';
+import {useNavigate} from "react-router-dom"
 import axios from 'axios';
 
 
@@ -12,8 +13,11 @@ import axios from 'axios';
   const [otpOfBackend,setOtpOfBackend] = useState("")
   const [isOtpsend , setIsOtpsend] = useState(false)
   const [email , setEmail] = useState("")
+  const [showReset,setShowReset] = useState(false)
+  const [newPassword,setNewPassword]= useState("")
+  const [confnewPassword,setConfNewPassword]= useState("")
 
-
+let navigate = useNavigate()
 
 
 
@@ -30,7 +34,7 @@ const HandleOtpChange = (element, index) => {
   }
 };
 
-
+// otp sending to email address 
 
 const sendOtp = async(e)=>{
   e.preventDefault()
@@ -53,6 +57,9 @@ const sendOtp = async(e)=>{
 }
 
 
+
+// otp checking ... 
+
 const submitOtp = (e)=>{
   try {
     e.preventDefault()
@@ -61,18 +68,53 @@ for(let x=0;x<otp.length;x++){
   bindedOtp+=otp[x]
 }
 
-    toast.success(otpOfBackend)
+   
     if(otpOfBackend===bindedOtp){
-      toast.success("otp good")
+      toast.success("otp entered successful")
+     setShowReset(true)
+  
     }else{
      toast.error("Incorrect otp")
     }
     
   } catch (error) {
-    toast.error(error.message)
+    toast.error(error.message,"lb")
   }
 }
  
+
+// resetting otp 
+
+const resetPassword = async(e)=>{
+  e.preventDefault()
+  const isvalid = validateNewPass()
+  if(isvalid===true){
+    await axios.patch("http://localhost:4500/api/user/resetpassword",{email:email ,password:newPassword}).then((res)=>{
+      toast.success(res.data.message)
+      navigate("/login")
+    })
+  }else{
+  toast.error("please validate")
+  }
+}
+
+function validateNewPass (){
+if(newPassword.length===0 ){
+  toast.error("please enter the password")
+  return false
+}
+if(confnewPassword.length===0){
+ toast.error("please confirm the password")
+ return
+}
+
+if( newPassword!==confnewPassword){
+  toast.error("confirm pass is not match")
+  return
+}
+return true
+
+}
 
 
   return (
@@ -81,7 +123,52 @@ for(let x=0;x<otp.length;x++){
 
 {isOtpsend?(
 
+<div>
+  {showReset?(  <div class="w-full max-w-xs mx-auto mt-10">
+    <h1 className='text-center' > <strong>Reset your password</strong> </h1>
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+        Password
+      </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        type="password"
+        placeholder="Password"
+        value={newPassword}
+        onChange={e=>setNewPassword(e.target.value)}
+      />
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password-confirm">
+        Confirm Password
+      </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password-confirm"
+        type="password"
+        placeholder="Confirm Password"
+        value={confnewPassword}
+
+        onChange={e=>setConfNewPassword(e.target.value)}
+
+      />
+    </div>
+    <div class="flex items-center justify-between">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="button"
+        onClick={resetPassword}
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>):
+
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-12">
+  
   <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl">
     <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
       <div class="flex flex-col items-center justify-center text-center space-y-2">
@@ -130,7 +217,24 @@ for(let x=0;x<otp.length;x++){
     </div>
   </div>
 </div>
+
+
+
+}
+
+
+
+</div>
 ):
+
+
+<div>
+
+
+
+
+
+
 
 
 
@@ -174,14 +278,14 @@ onChange={e=>setEmail(e.target.value)}
 </div>
 
 
-
-
-
+</div>
 
 }
 
       </div>
+   
   )
+  
 }
 
 export default ForgetPass
