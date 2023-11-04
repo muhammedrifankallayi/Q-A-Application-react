@@ -1,0 +1,10 @@
+.title{
+    color: black;
+    font-weight: bolder;
+}
+.forget-link{
+    color: rgb(76, 88, 203);
+}
+.forget-link:hover{
+    color:  rgb(29, 47, 208);
+}
