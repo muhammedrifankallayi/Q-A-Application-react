@@ -39,7 +39,7 @@ this.setState({
   isLogged:true
 })
 localStorage.setItem("accesstoken",result.data.accessToken)
-localStorage.setItem("refreshtoken",result.data.refreshToken)
+
 window.location.href='/home'
             toast.success("login succesfull!")
             

@@ -1,25 +1,88 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
+import toast from 'react-hot-toast'
+import { request } from '../axios/axios'
 
 function DropQuestion() {
+
+const initial = {title:"",followups:"",category:""}
+const [form,setForm] = useState(initial)
+const [userQas,setUserQas] = useState([])
+
+
+
+useEffect(()=>{
+    request({
+        url:"/api/user/getuserQusetions",
+        method:"get",
+    }).then((response)=>{
+        
+       if(response.data.success===true){
+        const data =  response.data.data
+        setUserQas(data)
+        console.log(data);
+       }
+
+    })
+},[])
+
+
+
+const HandleChanges = (e)=>{
+const {name,value} = e.target
+
+setForm({...form,[name]:value})
+}
+const Onsubmit = async(e)=>{
+    try {
+        e.preventDefault()
+        if(form.title==""){
+            toast.error("ll")
+            return 
+        }
+
+console.log(form);
+toast.success("ss")
+request({
+    url:"/api/user/savequestion",
+    method:"post",
+    data:{form:form}
+}).then(()=>{
+   alert("ss")
+})
+
+    } catch (error) {
+        
+    }
+}
+
+
+
+
   return (
     <div>
 <Header/>
 
 <div class="max-w-md mx-auto">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="text-input">
+                   Title
+                </label>
+                <input onChange={HandleChanges} name='title' class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text-input" type="text" placeholder="Enter text"></input>
+            </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="text-input">
-                    Text Input
+                   followups
                 </label>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text-input" type="text" placeholder="Enter text"></textarea>
+                <textarea name='followup' onChange={HandleChanges} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text-input" type="text" placeholder="Enter text"></textarea>
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="select-input">
                   Category or industry
                 </label>
                 <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline" id="select-input">
+                    <select name='category' onChange={HandleChanges} class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline" id="select-input">
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
@@ -32,7 +95,7 @@ function DropQuestion() {
                 </div>
             </div>
             <div class="flex items-center justify-between">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button  onClick={Onsubmit} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                     Drop
                 </button>
             </div>

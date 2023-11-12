@@ -22,6 +22,7 @@ class Counter extends Component {
         <h3>Count: {this.state.count}</h3>
         <button onClick={this.increase}>Increase</button>
         <button onClick={this.decrease}>Decrease</button>
+        <input type="color" onChange={(e)=>console.log(e.target.value)} ></input>
       </div>
     );
   }

@@ -11,6 +11,8 @@ import Updates from './componets/Updates';
 import Profile from './componets/Profile';
 import EditProfile from './componets/EditProfile';
 import DropQuestion from './componets/DropQuestion';
+import UsersChannels from './componets/UsersChannels';
+import settings from './componets/settings/settings';
 function App() {
   return (
     
@@ -25,6 +27,8 @@ function App() {
   <Route  path='/profile' Component={Profile} />
   <Route  path='/editprofile' Component={EditProfile} />
   <Route  path='/dropquestion' Component={DropQuestion} />
+  <Route  path='/usersChannels' Component={UsersChannels} />
+  <Route  path='/settings' Component={settings} />
 
 </Routes>
 </BrowserRouter>
