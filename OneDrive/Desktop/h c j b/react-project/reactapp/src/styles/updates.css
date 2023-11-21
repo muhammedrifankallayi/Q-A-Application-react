@@ -1,0 +1,12 @@
+.maindiv{
+    display: flex;
+    justify-content: center;
+}
+
+.content-sec{
+   margin: 0,50px,0,50px;
+}
+
+.follow-btn{
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+.avatar{
+    position: absolute;
+    width: 10%;
+   
+top: 30%;
+left: 50%;
+
+    
+   
+}
+
+@media(max-width:600px){
+   .avatar{
+    top: 32%;
+    left: 56%;
+    width: 25%;
+   }
+}
+
+.image-div{
+    background-image: url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+   
+}
+
+.content-div{
+  margin-left: 7%;
+  margin-right: 7%;
+  border-radius: 5px;
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import "../styles/home.css"
+
 export default function Home() {
   return (
     <div>
@@ -84,67 +86,149 @@ export default function Home() {
 </div>
 
 
+{/* infromation card */}
+
+<h1  className='info-text text-2xl'  >Guidlines</h1>
+
+<div class="container mx-auto p-2">
+<div class="grid grid-cols-2 sm:grid-cols-2 " > 
+        <div class="max-w-sm  ml-auto mr-3 bg-white border border-gray-200 rounded-lg shadow ">
+            <img src='https://images.pexels.com/photos/2566581/pexels-photo-2566581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt="Image 1" />
+            <p className='info-text'>hello i am muhammed rifan from kottakkal puthur hello for everyone then</p>
+        </div>
+
+        <div class="max-w-sm mr-auto ml-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <img src='https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt="Image 2" />
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2  mt-4">
+        <div class="max-w-sm ml-auto mr-3 bg-white border border-gray-200 rounded-lg shadow ">
+        <img src='https://images.pexels.com/photos/7203727/pexels-photo-7203727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ></img>
+        <p className='info-text'>hello i am muhammed rifan from kottakkal puthur hello for everyone then</p>
+       
+        </div>
+
+        <div class="max-w-sm mr-auto ml-3  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <img src='https://images.pexels.com/photos/2990644/pexels-photo-2990644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' ></img>
+       
+        </div>
+    </div>
+</div>
 
 
+
+
+
+{/* infromation card end */}
 
 {/* cards end */}
+<div class="card-container flex overflow-x-auto">
+<div class=" w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-4">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <img src='https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=400' ></img>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800">
+                   Follow now
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 
-<h1 className='text-2xl  font-bold pl-4  text-gray-800' >Latest trends</h1>
+
+    <div class=" w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-4">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <img src='https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=400' ></img>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800">
+                   Follow now
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-4">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                <img src='https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=400' ></img>
+
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800">
+                    Read more
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-4">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                <img src='https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=400' ></img>
+
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800">
+                    Read more
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-4">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                <img src='https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=400' ></img>
+
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800">
+                    Read more
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
-<div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
-    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700 m-3">
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
-            <p class="my-4">If you care for your time, I hands down would go with this."</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center space-x-3">
-            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture"></img>
-            <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>Bonnie Green</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">Developer at Open AI</div>
-            </div>
-        </figcaption>    
-    </figure>
-    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-tr-lg dark:bg-gray-800 dark:border-gray-700 m-3">
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
-            <p class="my-4">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center space-x-3">
-            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture"></img>
-            <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>Roberta Casas</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
-            </div>
-        </figcaption>    
-    </figure>
-    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-bl-lg md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700 m-3">
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
-            <p class="my-4">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center space-x-3">
-            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture"></img>
-            <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>Jese Leos</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>
-            </div>
-        </figcaption>    
-    </figure>
-    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700 m-3">
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
-            <p class="my-4">You have many examples that can be used to create a fast prototype for your team."</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center space-x-3">
-            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture"></img>
-            <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>Joseph McFall</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">CTO at Google</div>
-            </div>
-        </figcaption>    
-    </figure>
+
 </div>
 
 <Footer/>

@@ -24,13 +24,12 @@ export const request = async ({ ...options }) => {
 
 const handleError = async (error) => {
   if (error.response && error.response.status === 401) {
-    // Handle 401 Unauthorized errors (access token expired)
 
     try {
-      // Attempt to refresh the access token using the refresh token
+   
       const refreshedAccessToken = await refreshAccessToken();
 
-      // Retry the original request with the new access token
+   
       const originalRequest = error.config;
       originalRequest.headers.Authorization = `Bearer ${refreshedAccessToken}`;
 

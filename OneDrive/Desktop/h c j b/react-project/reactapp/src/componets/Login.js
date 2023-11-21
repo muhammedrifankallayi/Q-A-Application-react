@@ -34,10 +34,12 @@ export class Login extends Component {
         const err =  this.validate(this.state.formValue)
 
         if(Object.keys(err).length===0){
-          await axios.post("http://localhost:4500/api/user/login",this.state.formValue).then(()=>{
+          await axios.post("http://localhost:4500/api/user/login",this.state.formValue).then((result)=>{
 this.setState({
   isLogged:true
 })
+localStorage.setItem("accesstoken",result.data.accessToken)
+localStorage.setItem("refreshtoken",result.data.refreshToken)
 window.location.href='/home'
             toast.success("login succesfull!")
             
